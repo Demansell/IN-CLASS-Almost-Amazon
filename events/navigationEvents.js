@@ -1,6 +1,7 @@
-import { getAuthors } from '../api/authorData';
+import { favAuthors, getAuthors } from '../api/authorData';
 import { signOut } from '../utils/auth';
 import { showAuthors } from '../pages/authors';
+
 // navigation events
 const navigationEvents = () => {
   // LOGOUT BUTTON
@@ -23,6 +24,11 @@ const navigationEvents = () => {
   // 3. If the array is empty because there are no authors, make sure to use the emptyAuthor function
   document.querySelector('#authors').addEventListener('click', () => {
     getAuthors().then(showAuthors);
+  });
+
+  // Favorite authors
+  document.querySelector('#fav-authors').addEventListener('click', () => {
+    favAuthors().then(showAuthors);
   });
 
   // STRETCH: SEARCH
