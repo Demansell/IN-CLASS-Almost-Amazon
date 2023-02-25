@@ -3,6 +3,7 @@ import { showAuthors } from '../pages/authors';
 import { deleteBook, getBooks, getSingleBook } from '../api/bookData';
 import { showBooks } from '../pages/books';
 import addBookForm from '../components/forms/addBookForm';
+import selectAuthor from '../components/forms/selectAuthor';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -51,6 +52,7 @@ const domEvents = () => {
     }
     // FIXME: ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('add-author-btn')) {
+      selectAuthor();
       console.warn('ADD AUTHOR');
     }
     // FIXME: ADD CLICK EVENT FOR EDITING AN AUTHOR
